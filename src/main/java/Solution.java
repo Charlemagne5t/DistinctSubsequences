@@ -10,7 +10,8 @@ public class Solution {
         }
 
         for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
+            for (int j = i; j <= n; j++) {
+
                 if (t.charAt(i - 1) == s.charAt(j - 1)) {
                     dp[i][j] = dp[i - 1][j - 1] + dp[i][j - 1];
                 } else {
@@ -20,25 +21,5 @@ public class Solution {
         }
 
         return dp[m][n];
-    }
-
-    
-
-
-    private void matrixPrinter(boolean[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + "\t ");
-            }
-            System.out.println();
-        }
-    }
-    private void matrixPrinter(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + "\t ");
-            }
-            System.out.println();
-        }
     }
 }
